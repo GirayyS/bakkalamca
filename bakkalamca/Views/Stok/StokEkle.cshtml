@@ -1,0 +1,58 @@
+﻿@model List<bakkalamca.Models.stok>
+@{
+    ViewBag.Title = "StokEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding: 30px 10px;">
+    <form action="/Stok/StokEkle" method="post" enctype="multipart/form-data">
+        @if (Model.Count == 0)
+        {
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Stok ID</label>
+                    <input type="text" class="form-control" name="stok_id" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Adet</label>
+                    <input type="text" class="form-control" name="s_adedi" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Giris Tarihi</label>
+                    <input type="date" class="form-control" name="s_giris_tarihi" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Bitis Tarihi</label>
+                    <input type="date" class="form-control" name="s_bitis_tarihi" id="" value="" />
+                </div>
+            </div>
+
+        }
+        else
+        {
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Stok ID</label>
+                    <input type="text" class="form-control" name="stok_id" id="" value="@Model[0].stok_id" />
+                </div>
+                <div class="form-group">
+                    <label for="">Adet</label>
+                    <input type="text" class="form-control" name="s_adedi" id="" value="@Model[0].s_adedi" />
+                </div>
+                <div class="form-group">
+                    <label for="">Giris Tarihi</label>
+                    <input type="date" class="form-control" name="s_giris_tarihi" id="" value="@Model[0].s_giris_tarihi" />
+                </div>
+                <div class="form-group">
+                    <label for="">Bitis Tarihi</label>
+                    <input type="date" class="form-control" name="s_bitis_tarihi" id="" value="@Model[0].s_bitis_tarihi" />
+                </div>
+            </div>
+        }
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-success pull-left">Ekle</button>
+        </div>
+    </form>
+
+</div>
+

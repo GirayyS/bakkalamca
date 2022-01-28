@@ -1,0 +1,98 @@
+﻿@model List<bakkalamca.Models.kullanici>
+@{
+    ViewBag.Title = "KullaniciEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding: 30px 10px;">
+    <form action="/Login/KullaniciEkle" method="post" enctype="multipart/form-data">
+        @if (Model.Count == 0)
+        {
+            <input type="hidden" name="kullanici_id" value="" />
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Kullanıcı Adı</label>
+                    <input type="text" class="form-control" name="k_kullaniciadi" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Parola</label>
+                    <input type="text" class="form-control" name="k_parola" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Ad</label>
+                    <input type="text" class="form-control" name="k_adi" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Soyad</label>
+                    <input type="text" class="form-control" name="k_soyadi" id="" value="" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">E-Posta</label>
+                    <input type="text" class="form-control" name="k_eposta" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Telefon</label>
+                    <input type="text" class="form-control" name="k_telefon" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Durum</label>
+                    <input type="text" class="form-control" name="k_durum" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Rol Id</label>
+                    <input type="text" class="form-control" name="rol_id" id="" value="" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-success pull-left">Ekle</button>
+            </div>
+        }
+        else
+        {
+            <input type="hidden" name="kullanici_id" value="@Model[0].kullanici_id" />
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Kullanıcı Adı</label>
+                    <input type="text" class="form-control" name="k_kullaniciadi" id="" value="@Model[0].k_kullaniciadi" />
+                </div>
+                <div class="form-group">
+                    <label for="">Parola</label>
+                    <input type="text" class="form-control" name="k_parola" id="" value="@Model[0].k_parola" />
+                </div>
+                <div class="form-group">
+                    <label for="">Ad</label>
+                    <input type="text" class="form-control" name="k_adi" id="" value="@Model[0].k_adi" />
+                </div>
+                <div class="form-group">
+                    <label for="">Soyad</label>
+                    <input type="text" class="form-control" name="k_soyadi" id="" value="@Model[0].k_soyadi" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">E-Posta</label>
+                    <input type="text" class="form-control" name="k_eposta" id="" value="@Model[0].k_eposta" />
+                </div>
+                <div class="form-group">
+                    <label for="">Telefon</label>
+                    <input type="text" class="form-control" name="k_telefon" id="" value="@Model[0].k_telefon" />
+                </div>
+                <div class="form-group">
+                    <label for="">Durum</label>
+                    <input type="text" class="form-control" name="k_durum" id="" value="@Model[0].k_durum" />
+                </div>
+                <div class="form-group">
+                    <label for="">Rol Id</label>
+                    <input type="text" class="form-control" name="rol_id" id="" value="@Model[0].rol_id" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-success pull-left">Ekle</button>
+            </div>
+        }
+    </form>
+</div>
+
+

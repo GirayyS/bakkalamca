@@ -1,0 +1,62 @@
+﻿@model bakkalamca.ViewModels.FaturaClass
+@{
+    ViewBag.Title = "Fatura";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="row" style="padding:10px;">
+    @*<a href="/Satıs/SatisEkle" class="btn btn-sm btn-success pull-right"> Ekle</a>*@
+</div>
+<div class="row">
+    <div class="table-responsive" style="padding: 10px;">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Satis Tarihi</th>
+                    <th>Kullanici Adi</th>
+                    <th>Kullanici Soyadi</th>
+                    <th>Miktar</th>
+                    <th>Fiyat</th>
+                    <th>Iskonto</th>
+                    <th>Urun Adi</th>
+                    <th>Urun Fiyati</th>
+                    <th>Kategori Adi</th>
+                    <th>Marka Adi</th>
+                </tr>
+            </thead>
+            <tbody>
+              @*  @if (Model.Count() > 0)
+              //  {
+                    //foreach (var item in Model)
+                    //{*@
+               <tr>
+                    <td>@Model.sat.s_tarih</td>
+                    <td>@Model.sat.kullanici.k_kullaniciadi</td>
+                    <td>@Model.sat.kullanici.k_soyadi</td>
+                    <td>@Model.smadde.si_miktar</td>
+                    <td>@Model.smadde.si_fiyat</td>
+                    <td>@Model.smadde.si_iskonto</td>
+                    <td>@Model.smadde.urun.u_adi</td>
+                    <td>@Model.smadde.urun.u_fiyat</td>
+                    <td>@Model.smadde.urun.kategori.k_adi</td>
+                    <td>@Model.smadde.urun.marka.m_adi</td>
+                    <td>
+                        <a href="/Satıs/Satis/" class="btn btn-sm btn-warning">Geri</a>
+                    </td>
+
+                </tr>
+            @*     //  }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5">Kayıt bulunamadı</td>
+                    </tr>
+                }*@
+            </tbody>
+        </table>
+    </div>
+</div>
+

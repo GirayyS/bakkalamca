@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_login_layout.cshtml";
+}
+
+<div class="row" style="padding: 30px 10px;">
+    <form action="/Home/Index" method="post" enctype="multipart/form-data">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="k_kullaniciadi">Kullanıcı Adı</label>
+                <input type="text" class="form-control" name="k_kullaniciadi"  value="" />
+            </div>
+            <div class="form-group">
+                <label for="k_parola">Şifre</label>
+                <input type="password" class="form-control" name="k_parola" placeholder="******" value="" />
+            </div>
+        </div>
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-success pull-left">Giriş</button>
+        </div>
+    </form>
+</div>

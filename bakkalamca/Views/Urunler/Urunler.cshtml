@@ -1,0 +1,60 @@
+﻿@model List<bakkalamca.Models.urun>
+@{
+    ViewBag.Title = "Urunler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding:10px;">
+    <a href="/Urunler/UrunEkle" class="btn btn-sm btn-success pull-right"> Ekle</a>
+</div>
+<div class="row">
+    <div class="table-responsive" style="padding: 10px;">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Urun Adı</th>
+                    <th>Barkodu</th>
+                    <th>Uretim Tarihi</th>
+                    <th>Tuketim Tarihi</th>
+                    <th>Fiyat</th>
+                    <th>Agirlik</th>
+                    <th>Renk</th>
+                    <th>Marka ID</th>
+                    <th>Kategori ID</th>
+                    <th>Stok ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.u_adi</td>
+                            <td>@item.u_barkodu</td>
+                            <td>@item.u_uretim_tarihi</td>
+                            <td>@item.u_tuketim_tarihi</td>
+                            <td>@item.u_fiyat</td>
+                            <td>@item.u_agirlik</td>
+                            <td>@item.u_rengi</td>
+                            <td>@item.marka_id</td>
+                            <td>@item.kategori_id</td>
+                            <td>@item.stok_id</td>
+                            <td>
+                                <a href="/Urunler/UrunSil/?id=@item.urun_id" class="btn btn-sm btn-danger">Sil</a>
+                                <a href="/Urunler/UrunEkle/?id=@item.urun_id" class="btn btn-sm btn-warning">Güncelle</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5">Kayıt bulunamadı</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

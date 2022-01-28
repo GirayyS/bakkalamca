@@ -1,0 +1,111 @@
+﻿@model List<bakkalamca.Models.urun>
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding: 30px 10px;">
+    <form action="/Urunler/UrunEkle" method="post" enctype="multipart/form-data">
+        @if (Model.Count == 0)
+        {
+            <input type="hidden" name="urun_id" value="" />
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Urun Adı</label>
+                    <input type="text" class="form-control" name="u_adi" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Barkod</label>
+                    <input type="text" class="form-control" name="u_barkodu" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Uretim Tarihi</label>
+                    <input type="date" class="form-control" name="u_uretim_tarihi" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Tuketim Tarihi</label>
+                    <input type="date" class="form-control" name="u_tuketim_tarihi" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Fiyat</label>
+                    <input type="text" class="form-control" name="u_fiyat" id="" value="" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Agirlik</label>
+                    <input type="text" class="form-control" name="u_agirlik" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Renk</label>
+                    <input type="text" class="form-control" name="u_rengi" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Marka ID</label>
+                    <input type="text" class="form-control" name="marka_id" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Kategori ID</label>
+                    <input type="text" class="form-control" name="kategori_id" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Stok ID</label>
+                    <input type="text" class="form-control" name="stok_id" id="" value="" />
+                </div>
+            </div>
+        }
+        else
+        {
+            <input type="hidden" name="urun_id" value="@Model[0].urun_id" />
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Urun Adı</label>
+                    <input type="text" class="form-control" name="u_adi" id="" value="@Model[0].u_adi" />
+                </div>
+                <div class="form-group">
+                    <label for="">Barkod</label>
+                    <input type="text" class="form-control" name="u_barkodu" id="" value="@Model[0].u_barkodu" />
+                </div>
+                <div class="form-group">
+                    <label for="">Uretim Tarihi</label>
+                    <input type="date" class="form-control" name="u_uretim_tarihi" id="" value="@Model[0].u_uretim_tarihi" />
+                </div>
+                <div class="form-group">
+                    <label for="">Tuketim Tarihi</label>
+                    <input type="date" class="form-control" name="u_tuketim_tarihi" id="" value="@Model[0].u_tuketim_tarihi" />
+                </div>
+                <div class="form-group">
+                    <label for="">Fiyat</label>
+                    <input type="text" class="form-control" name="u_fiyat" id="" value="@Model[0].u_fiyat" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Agirlik</label>
+                    <input type="text" class="form-control" name="u_agirlik" id="" value="@Model[0].u_agirlik" />
+                </div>
+                <div class="form-group">
+                    <label for="">Renk</label>
+                    <input type="text" class="form-control" name="u_rengi" id="" value="@Model[0].u_rengi" />
+                </div>
+                <div class="form-group">
+                    <label for="">Marka ID</label>
+                    <input type="text" class="form-control" name="marka_id" id="" value="@Model[0].marka_id" />
+                </div>
+                <div class="form-group">
+                    <label for="">Kategori ID</label>
+                    <input type="text" class="form-control" name="kategori_id" id="" value="@Model[0].kategori_id" />
+                </div>
+                <div class="form-group">
+                    <label for="">Stok ID</label>
+                    <input type="text" class="form-control" name="stok_id" id="" value="@Model[0].stok_id" />
+                </div>
+            </div>
+        }
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-success pull-left">Ekle</button>
+        </div>
+    </form>
+</div>
+
+

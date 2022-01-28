@@ -1,0 +1,76 @@
+﻿@model List<bakkalamca.Models.satis>
+@{
+    ViewBag.Title = "SatisEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding: 30px 10px;">
+    <form action="/Satıs/SatisEkle" method="post" enctype="multipart/form-data">
+        @if (Model.Count == 0)
+        {
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="hidden" class="form-control" name="satis_id" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Tarih</label>
+                    <input type="date" class="form-control" name="s_tarih" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Durum</label>
+                    <input type="text" class="form-control" name="s_durum" id="" value="" />
+                </div>
+                <div class="form-group">
+                    <label for="">Kullanici ID</label>
+                    <input type="text" class="form-control" name="kullanici_id" id="" value="" />
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="hidden" class="form-control" name="satis_id" id="" value="@Model[0].satis_id" />
+                </div>
+                <div class="form-group">
+                    <label for="">Tarih</label>
+                    <input type="date" class="form-control" name="s_tarih" id="" value="@Model[0].s_tarih" />
+                </div>
+                <div class="form-group">
+                    <label for="">Durum</label>
+                    <input type="text" class="form-control" name="s_durum" id="" value="@Model[0].s_durum" />
+                </div>
+                <div class="form-group">
+                    <label for="">Kullanici ID</label>
+                    <input type="text" class="form-control" name="kullanici_id" id="" value="@Model[0].kullanici_id" />
+                </div>
+            </div>
+        }
+
+        @*@foreach (var item in Model)
+        {
+        }
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="hidden" class="form-control" name="satis_id" id="" value="@item.satis_id" />
+            </div>
+            <div class="form-group">
+                <label for="">Adet</label>
+                <input type="date" class="form-control" name="s_tarih" id="" value="@item.s_tarih" />
+            </div>
+            <div class="form-group">
+                <label for="">Giris Tarihi</label>
+                <input type="text" class="form-control" name="s_durum" id="" value="@item.s_durum" />
+            </div>
+            <div class="form-group">
+                <label for="">Bitis Tarihi</label>
+                <input type="text" class="form-control" name="kullanici_id" id="" value="@item.kullanici_id" />
+            </div>
+        </div>*@
+
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-success pull-left">Ekle</button>
+        </div>
+    </form>
+
+</div>

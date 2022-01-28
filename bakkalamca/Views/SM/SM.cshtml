@@ -1,0 +1,51 @@
+﻿@model List<bakkalamca.Models.satis_maddeleri>
+@{
+    ViewBag.Title = "SM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding:10px;">
+    <a href="/SM/SMEkle" class="btn btn-sm btn-success pull-right"> Ekle</a>
+</div>
+<div class="row">
+    <div class="table-responsive" style="padding: 10px;">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Miktar</th>
+                    <th>Fiyat</th>
+                    <th>Iskonto </th>
+                    <th>Satis ID</th>
+                    <th>Urun ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.si_miktar</td>
+                            <td>@item.si_fiyat</td>
+                            <td>@item.si_iskonto</td>
+                            <td>@item.satis_id</td>
+                            <td>@item.urun_id</td>
+                            <td>
+                                <a href="/SM/SMSil/?id=@item.sm_id" class="btn btn-sm btn-danger">Sil</a>
+                                <a href="/SM/SMEkle/?id=@item.sm_id" class="btn btn-sm btn-warning">Güncelle</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5">Kayıt bulunamadı</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

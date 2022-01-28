@@ -1,0 +1,37 @@
+﻿@model List<bakkalamca.Models.marka>
+@{
+    ViewBag.Title = "MarkaEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" style="padding: 30px 10px;">
+    <form action="/Marka/MarkaEkle" method="post" enctype="multipart/form-data">
+        @if (Model.Count == 0)
+        {
+            <input type="hidden" name="marka_id" value="" />
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Marka Adı</label>
+                    <input type="text" class="form-control" name="m_adi" id="" value="" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-success pull-left">Ekle</button>
+            </div>
+        }
+        else
+        {
+            <input type="hidden" name="marka_id" value="@Model[0].marka_id" />
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="">Marka Adı</label>
+                    <input type="text" class="form-control" name="m_adi" id="" value="@Model[0].m_adi" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-success pull-left">Ekle</button>
+            </div>
+        }
+    </form>
+</div>
+
+

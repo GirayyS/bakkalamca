@@ -1,0 +1,56 @@
+﻿@model List<bakkalamca.Models.kullanici>
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" style="padding:10px;">
+    <a href="/Login/KullaniciEkle" class="btn btn-sm btn-success pull-right"> Ekle</a>
+</div>
+<div class="row">
+    <div class="table-responsive" style="padding: 10px;">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Kullanıcı Adı</th>
+                    <th>Parola</th>
+                    <th>Adı</th>
+                    <th>Soyadı</th>
+                    <th>Email</th>
+                    <th>Telefon</th>
+                    <th>Durum</th>
+                    <th>Rol</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.k_kullaniciadi</td>
+                            <td>@item.k_parola</td>
+                            <td>@item.k_adi</td>
+                            <td>@item.k_soyadi</td>
+                            <td>@item.k_eposta</td>
+                            <td>@item.k_telefon</td>
+                            <td>@item.k_durum</td>
+                            <td>@item.rol_id</td>
+                            <td>
+                                <a href="/Login/KullaniciSil/?id=@item.kullanici_id" class="btn btn-sm btn-danger">Sil</a>
+                                <a href="/Login/KullaniciEkle/?id=@item.kullanici_id" class="btn btn-sm btn-warning">Güncelle</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5">Kayıt bulunamadı</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
